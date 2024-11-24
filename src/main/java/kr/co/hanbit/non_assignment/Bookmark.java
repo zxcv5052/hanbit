@@ -1,4 +1,4 @@
-package kr.co.hanbit;
+package kr.co.hanbit.non_assignment;
 
 public class Bookmark {
     public String name;

@@ -1,4 +1,4 @@
-package kr.co.hanbit;
+package kr.co.hanbit.non_assignment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
