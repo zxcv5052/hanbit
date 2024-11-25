@@ -26,12 +26,12 @@ public class ProductController {
         return productService.findById(id);
     }
 
-    @GetMapping("/products")
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
     public List<ProductDto> findAllProduct() {
         return productService.findAll();
     }
 
-    @GetMapping("/products")
+    @RequestMapping(value = "/products", params = "name", method = RequestMethod.GET)
     public List<ProductDto> findProductByName(@RequestParam(required = false) String name) {
         if (name == null) {
             return productService.findAll();
