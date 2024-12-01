@@ -2,6 +2,8 @@ package kr.co.hanbit.assignment.infrastructure;
 
 import kr.co.hanbit.assignment.domain.EntityNotFoundException;
 import kr.co.hanbit.assignment.domain.Product;
+import kr.co.hanbit.assignment.domain.ProductRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,7 +11,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public class ProductRepository {
+@Profile("dev")
+public class ListProductRepository implements ProductRepository {
     // CopyOnWriteArrayList를 사용하는 이유는 멀티스레드 환경에서 Thread Safety 컬렉션을 사용해야 하기 때문
     private List<Product> products = new CopyOnWriteArrayList<>();
     private AtomicLong sequence = new AtomicLong(1L);
